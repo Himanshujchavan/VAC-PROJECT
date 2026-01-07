@@ -4,6 +4,8 @@ import ChatArea from './components/ChatArea'
 import InputBar from './components/InputBar'
 import QuickActions from './components/QuickActions'
 import ToggleButton from './components/ToggleButton'
+import MainContent from './components/MainContent'
+import Navbar from './components/Navbar'
 
 const initialBotMessage = {
   id: 'm-welcome',
@@ -58,22 +60,33 @@ export default function App() {
     }, 900)
   }
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const onQuickAction = (key) => {
     const map = {
-      admissions: 'Tell me about admissions',
-      courses: 'What courses are offered?',
-      fees: 'What are the fees?',
-      contact: 'How can I contact the college?',
-      calendar: 'Show me the academic calendar',
+      admissions: { msg: 'Tell me about admissions', section: 'admissions' },
+      courses: { msg: 'What courses are offered?', section: 'branches' },
+      fees: { msg: 'What are the fees?', section: 'admissions' },
+      contact: { msg: 'How can I contact the college?', section: 'contact' },
+      calendar: { msg: 'Show me the academic calendar', section: 'achievements' },
     }
-    const prompt = map[key]
-    if (prompt) handleSend(prompt)
+    const item = map[key]
+    if (!item) return
+    scrollToSection(item.section)
+    handleSend(item.msg)
   }
 
   const contentVisible = useMemo(() => open && !minimized, [open, minimized])
 
   return (
-    <>
+    <div className="page">
+      <Navbar onNavigate={scrollToSection} />
+      <MainContent />
       <ToggleButton open={open} onClick={() => setOpen((v) => !v)} />
       <div className={`chatbot-widget ${contentVisible ? 'active' : ''}`} role="dialog" aria-label="College Enquiry Assistant">
         <ChatbotHeader
@@ -101,7 +114,7 @@ export default function App() {
         )}
       </div>
       <div className={`chatbot-overlay ${contentVisible ? 'active' : ''}`} onClick={() => setOpen(false)} />
-    </>
+    </div>
   )
 }
 
