@@ -349,16 +349,17 @@ body {
 .chatbot-content {
     flex: 1;
     overflow-y: auto;
-    padding: 0;
+    padding: var(--space-4);
     display: flex;
     flex-direction: column;
+    background: #f8fafc;
 }
 
 /* Empty State */
 .empty-state {
     text-align: center;
     padding: var(--space-6) var(--space-4);
-    margin: var(--space-4) var(--space-3) 0;
+    margin-bottom: var(--space-4);
 }
 
 .bot-illustration {
@@ -395,7 +396,8 @@ body {
 
 /* Quick Actions */
 .quick-actions {
-    margin: var(--space-4) var(--space-3) var(--space-6);
+    margin-bottom: var(--space-6);
+    padding: 0 var(--space-2);
 }
 
 .quick-actions h5 {
@@ -451,8 +453,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0 var(--space-3);
-    margin-top: var(--space-4);
+    padding: 0;
 }
 
 .messages-container {

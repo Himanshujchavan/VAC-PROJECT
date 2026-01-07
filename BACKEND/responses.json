@@ -1,0 +1,15 @@
+{
+  "responses": {
+    "admissions": "Admissions to YCCE open in March every year. Eligibility: Minimum 50% in qualifying exams (varies by category). Applications are online through the official website. Required documents include mark sheets, ID proof, and category certificate. Counseling happens in June-July. For detailed information, contact the admissions office at +91-XXXXXXXXXX or email admissions@ycce.edu",
+    
+    "courses": "YCCE offers B.Tech programs in Computer Science & Engineering, Information Technology, Electronics & Communication Engineering, Mechanical Engineering, Civil Engineering, Electrical Engineering, and Artificial Intelligence & Data Science. We also offer B.Sc, B.Com, BBA, and postgraduate programs including M.Tech. Each program has industry-aligned curriculum with labs, projects, and internship opportunities.",
+    
+    "fees": "UG fees at YCCE start from ₹60,000 per year (varies by branch). This includes tuition, lab, library, and examination fees. Hostel fees are separate. Merit-based scholarships and need-based financial aid are available. Fees can be paid online or at the college office. Apply for scholarships during admission. For detailed fee structure, contact the accounts section.",
+    
+    "achievements": "YCCE is NAAC A+ accredited and has multiple NBA-accredited programs. We have strong placement records with top companies like TCS, Infosys, Wipro, Amazon, and Microsoft recruiting our students. Average package is competitive with highest packages exceeding industry standards. Our students have won national hackathons, filed patents, and published research papers. We have state-of-the-art labs and active research centers.",
+    
+    "contact": "YCCE is located at Campus Road, Nagpur, Maharashtra. Contact: Phone: +91-XXXXXXXXXX | Email: admissions@ycce.edu | Office Hours: Monday to Friday, 9:00 AM to 5:00 PM. You can visit our campus for tours (prior appointment recommended). The campus is easily accessible by public transport and is near the main railway station. For specific department queries, visit our website for direct contacts.",
+    
+    "fallback": "I'm sorry, I didn't quite understand that. I can help you with information about admissions, courses, fees, placements, and contact details. Please ask about these topics, or contact the college office directly at +91-XXXXXXXXXX or admissions@ycce.edu for more assistance."
+  }
+}

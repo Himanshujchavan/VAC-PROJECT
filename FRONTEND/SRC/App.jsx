@@ -6,6 +6,8 @@ import QuickActions from './components/QuickActions'
 import ToggleButton from './components/ToggleButton'
 import MainContent from './components/MainContent'
 import Navbar from './components/Navbar'
+import { getNLPModelResponse } from './services/api'
+
 
 const initialBotMessage = {
   id: 'm-welcome',
@@ -44,9 +46,8 @@ export default function App() {
     setMessages((prev) => [...prev, userMsg])
     setIsTyping(true)
 
-    // Simulated bot response logic (can be replaced with API)
-    const botReply = await mockBotReply(text)
-    setTimeout(() => {
+    try {
+      const botReply = await getNLPModelResponse(text)
       setMessages((prev) => [
         ...prev,
         {
@@ -57,7 +58,19 @@ export default function App() {
         },
       ])
       setIsTyping(false)
-    }, 900)
+    } catch (error) {
+      console.error('Chat error:', error)
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `m-bot-${Date.now()}`,
+          author: 'bot',
+          text: 'Sorry, the chatbot service is unavailable. Please ensure the backend server is running.',
+          timestamp: new Date().toISOString(),
+        },
+      ])
+      setIsTyping(false)
+    }
   }
 
   const scrollToSection = (id) => {
